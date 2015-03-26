@@ -1,0 +1,13 @@
+<?php if($this->getItems()->getSize()): ?>
+	<h2 class="h1 bb"><?php echo $this->__('Related Products') ?></h2>
+	<div class="preview-boxes">
+	 <?php foreach($this->getItems() as $_item): ?>
+            <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" class="preview-box">
+				<div class="preview-img">
+					<img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(250) ?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" />
+				</div>
+				<h4><?php echo $this->escapeHtml($_item->getName()) ?></h4>
+			</a>
+        <?php endforeach ?>
+	</div>	
+<?php endif ?>

@@ -1,0 +1,102 @@
+<div class="one-click">
+    <?php echo $this->getChildHtml('onestepcheckout_checkout'); ?>
+</div>
+<div id="morder" class="modal modal-order-auth" style="display: none;">
+    <div class="form-order-auth">
+
+
+        <span class="close-modal">Закрити</span>
+        <div class="total">
+            <div class="modal-title">Оформлення замовлення</div>
+
+            <dl>
+                <div class="modal-one-click">
+                    <?php echo $this->getChildHtml('summary'); ?>
+                </div>
+                <dt>Сума замовлення:</dt>
+                <dd id="form-summa">1790 грн.</dd>
+                <dt>Вартість доставки:</dt>
+                <dd id="form-bonus">Безкоштовно</dd>
+            </dl>
+        </div>
+        <div class="form">
+            <div class="modal-title">Выберіть адресу та телефон</div>
+            <form onsubmit="return makeOrder(false);">
+                <div class="field autocomplete">
+                    <input class="styler" type="tel" required="" autocomplete="off" name="phone" placeholder="Телефон" maxlength="18" style="width: 303px;">
+                </div>
+                <div class="field autocomplete">
+                    <input class="styler" type="text" autocomplete="off" name="address" placeholder="Адрес" style="width: 303px;" required="">
+                </div>
+
+                <div class="field need-time" style="display: block;">
+                    <p>Час доставки:</p>
+								<span>
+									<select name="month">
+                                        <option value="2015-01-15">15 січня, чт</option>
+                                        <option value="2015-01-16">16 січня, пт</option>
+                                        <option value="2015-01-17">17 січня, сб</option>
+                                        <option value="2015-01-18">18 січня, нд</option>
+                                        <option value="2015-01-19">19 січня, пн</option>
+                                        <option value="2015-01-20">20 січня, вт</option>
+                                        <option value="2015-01-21">21 січня, ср</option>
+                                        <option value="2015-01-22">22 січня, чт</option>
+                                        <option value="2015-01-23">23 січня, пт</option>
+                                        <option value="2015-01-24">24 січня, сб</option>
+                                        <option value="2015-01-25">25 січня, вс</option>
+                                        <option value="2015-01-26">26 січня, пн</option>
+                                        <option value="2015-01-27">27 січня, вт</option>
+                                        <option value="2015-01-28">28 січня, ср</option>
+                                        <option value="2015-01-29">29 січня, чт</option>
+                                        <option value="2015-01-30">30 січня, пт</option>
+                                        <option value="2015-01-31">31 січня, сб</option>
+                                    </select>
+								</span>
+                    <select name="hour">
+                        <option value="0">00</option>
+                        <option value="1">01</option>
+                        <option value="2">02</option>
+                        <option value="3">03</option>
+                        <option value="4">04</option>
+                        <option value="5">05</option>
+                        <option value="6">06</option>
+                        <option value="7">07</option>
+                        <option value="8">08</option>
+                        <option value="9">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                    </select>
+
+                    <select name="minute">
+                        <option value="0">00</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <textarea class="styler" name="comment" placeholder="Коментарі (не обов'язково)"></textarea>
+                </div>
+                <div class="button">
+                    <button class="btn blue" type="submit">Перейти до оплати</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <a href="#morder" id="order" class="modalLink"></a>
+</div>

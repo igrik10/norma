@@ -1,0 +1,43 @@
+/* Misc */
+.links li { display:inline; }
+.links li.first { padding-left:0 !important; }
+.links li.last { background:none !important; padding-right:0 !important; }
+
+.custom-view .view-mode, .custom-view .limiter, .custom-view .amount, .custom-view .sort-by {
+	display:none;
+}
+
+.block-viewed .block-title{
+	background: #9c1111;
+	color: #fff;
+	font-weight: bold;
+	line-height: 50px;
+	text-align: center;
+	text-transform: uppercase;
+}
+#recently-viewed-items .item{
+    clear: both;
+    padding: 10px;
+}
+
+.catalog-filter .field-ao{
+	padding: 0 21px 0 24px;
+}
+
+.catalog-filter .field-price{
+	border-bottom: 1px solid #dedee0 !important;
+}
+.catalog-filter-price{
+	margin-bottom:21px;
+	border-bottom: 1px solid #fff;
+}
+
+.info .product-img-box{
+	line-height: 0;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+

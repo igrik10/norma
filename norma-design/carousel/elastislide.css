@@ -1,0 +1,48 @@
+
+.es-carousel-wrapper{
+	position:relative;
+}
+.es-carousel{
+overflow: hidden;
+margin: 0 30px 0 46px;
+width: 790px;
+padding: 0 20px;
+}
+.es-carousel ul{
+	display:none;
+	padding: 0 0 0 0px !important;
+}
+.es-carousel ul li{
+float: left;
+display: block;
+padding: 5px 0;
+}
+
+
+.es-nav span{
+position: absolute;
+top: 50%;
+left: 12px;
+width: 35px;
+height: 41px;
+margin-top: -20px;
+text-indent: -9000px;
+cursor: pointer;
+/* opacity: 0.8; */
+display: block !important;
+}
+.es-nav span.es-nav-next{
+	background:transparent url(/carousel/arrow_next.png) no-repeat;
+	right:27px;
+	left:auto;
+}
+
+.es-nav span.es-nav-prev{
+	background:transparent url(/carousel/arrow_prew.png) no-repeat;
+	left:32px;
+	right:auto;
+}
+
+.es-nav span:hover{
+	opacity:1.0;
+}

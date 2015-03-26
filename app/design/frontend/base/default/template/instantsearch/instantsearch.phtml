@@ -1,0 +1,59 @@
+<?php $catalogSearchHelper =  $this->helper('catalogsearch'); ?>
+<div class="search-box">
+    <script src="<?php echo $this->getJsUrl().'magestore/instantsearch.js'; ?>" type="text/javascript"></script>
+    <form id="search_mini_form" action="<?php echo $catalogSearchHelper->getResultUrl() ?>" method="get">
+        <div class="form-search">
+            <div id="instantsearch">
+               <!-- <label for="search"><?php //echo $this->__('Search:') ?></label>-->
+                <div id="mi_header">
+                    <input autocomplete="off" id="search" type="text" name="<?php echo $catalogSearchHelper->getQueryParamName() ?>" placeholder="Миттєвий пошук товарів" value="<?php echo(Mage::registry('keyword')); ?>" class="input-text" />
+                </div>
+                    <button type="submit" title="<?php echo $this->__('Пошук товарів') ?>" class="button icon search"></button>
+               <!--<div id="search_autocomplete" class="search-autocomplete"></div>-->
+                <script type="text/javascript">
+               // <![CDATA[
+                    //var searchForm = new Varien.searchForm('search_mini_form', 'search', '');
+                    //searchForm.initAutocomplete('<?php echo $catalogSearchHelper->getSuggestUrl() ?>', 'search_autocomplete');
+                //]]>
+                </script>
+            </div>
+        </div>
+    </form>
+    <div id="showProduct" style="display:none;">
+        <div id="productContainer">
+            <div class="head-notice clearfix">
+                <h3 class="title left"><span id="searchTermkeyword">Миттєвий пошук товарів</span></h3>
+                <h3 class="title right"><a class="instantsearch-close right" href="javascript:void(0);" onclick="$('showProduct').hide(); return false;">X</a></h3>
+            </div>
+            <!--<div id="mainProductWapper">
+                <div id="mainProduct">
+
+                </div>
+            </div>-->
+            <div id="moreProductsWapper">
+                <div id="moreProducts">
+
+                </div>
+            </div>
+        </div>
+    </div>
+   <!-- echo $this->getUrl('instantsearch/index/loadproduct')-->
+    <script type="text/javascript">
+
+
+        var instantsearch = new Instantsearch(
+            '<?php echo $this->getUrl('instantsearch/index/search') ?>',
+            '',
+            '<?php echo Mage::getStoreConfig('instantsearch/general/more_product_num') ?>',
+            'search'
+        );
+
+        Event.observe('search', 'keyup', function(event){
+            instantsearch.search();
+        });
+        //instantsearch.search();
+
+
+    </script>
+</div>
+

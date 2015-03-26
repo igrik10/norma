@@ -1,0 +1,58 @@
+<script>
+	// check category in filter
+	function filterCategory()
+	{
+		id = jQuery('select[name="cuisine"]').val();
+		if(id != '0')
+		{
+			var l = document.getElementById(id);
+			l.click();
+		}
+	}
+</script>
+<ul class="nav-items cat">
+<?php foreach ($this->getItems() as $_item):?>
+    <li id="sitem-<?php echo $_item->getCategoryId(); ?>">
+        <?php if ($_item->getIsCurrent()): ?>
+        <a href="javascript:void(0)"><span class="adj-nav-category-current"><?php echo $_item->getLabel() ?></span> </a>
+        <?php  else: ?>
+		<?php if (Mage::getStoreConfig('layerednav/layerednav/reload_categories')) { ?>
+                    <a id="cat-<?php echo $_item->getCategoryId()?>" href="<?php echo $this->htmlEscape($_item->getUri()) ?>" class="adj-nav-pad<?php echo $_item->getLevel()?>"><?php echo $_item->getLabel() ?> 
+						<? /*if($_item->getCount()): ?>  
+						 (<?php echo $_item->getCount() ?>) 
+						<?php endif */?>
+					</a>
+                <?php } else { ?>
+                        <a id="cat-<?php echo $_item->getCategoryId()?>" href="<?php echo $this->htmlEscape($_item->getUri()) ?>" class="fme_layered_category adj-nav-pad<?php echo $_item->getLevel()?>"><?php echo $_item->getLabel() ?>
+							<? /*if($_item->getCount()): ?>  
+							 (<?php echo $_item->getCount() ?>) 
+							<?php endif */?>
+						</a>
+                <?php } ?>
+        <?php endif ?>
+    </li>
+<?php endforeach ?>
+</ul>
+
+
+<!--<select style="display:none" name="cuisine" onchange="filterCategory();">	
+	<?php foreach ($this->getItems() as $_item):?>
+		<?php if ($_item->getIsCurrent()): ?>
+			<option selected="selected" value="0">
+				<?php echo $_item->getLabel() ?>
+				<?php if($_item->getCount()): ?>  
+					 (<?php echo $_item->getCount() ?>) 
+				<?php endif; ?>
+			</option>
+		<?php  else: ?>
+			<?php //if (Mage::getStoreConfig('layerednav/layerednav/reload_categories')): ?>                  
+					<option value="cat-<?php echo $_item->getCategoryId(); ?>">
+						<?php echo $_item->getLabel() ?>
+						<?php if($_item->getCount()): ?>  
+							 (<?php echo $_item->getCount() ?>) 
+						<?php endif; ?>
+					</option>
+			<?php //endif; ?>
+        <?php endif; ?>
+	<?php endforeach ?>
+</select>-->

@@ -1,0 +1,111 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2014 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Grouped product data template
+ *
+ * @see Mage_Catalog_Block_Product_View_Media
+ * @see Mage_Catalog_Block_Product_View_Type_Grouped
+ */
+?>
+<?php $this->setPreconfiguredValue(); ?>
+<?php $_product = $this->getProduct(); ?>
+<?php $_associatedProducts = $this->getAssociatedProducts(); ?>
+<?php $_hasAssociatedProducts = count($_associatedProducts) > 0; ?>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php echo $this->getChildHtml('product_type_data_extra') ?>
+
+    <?php if ($_hasAssociatedProducts): ?>
+    <?php foreach ($_associatedProducts as $_item): ?>
+	<?php //var_dump($_item); die;?>
+        <?php $_finalPriceInclTax = $this->helper('tax')->getPrice($_item, $_item->getFinalPrice(), true) ?>
+        
+		<div class="item">
+		<a href="<?php echo $_item->getProductUrl() ?>">
+			<div class="img line">
+				<img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(150) ?>" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" />
+			</div>
+			<div class="info">
+				<h3><?php echo $this->escapeHtml($_item->getName()) ?></h3>
+				<small>
+				<?php if ($this->getCanShowProductPrice($_product)): ?>
+					<?php if ($this->getCanShowProductPrice($_item)): ?>
+						<?php //echo $this->getPriceHtml($_item, true) ?>
+						<?php echo $this->getTierPriceHtml($_item) ?>
+					<?php endif; ?>
+				<?php endif; ?>
+				</small>
+			    <div class="dop-info icon">
+					<?php if ($_item->isSaleable()) : ?>
+					<span class="availability in-stock"><span><?php echo $this->__('In stock') ?></span></span>
+					<?php else: ?>
+					<span class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></span>
+					<?php endif; ?>
+				</div>
+				<p>&nbsp;</p>
+				<div class="dl-list">
+					<dl>
+						<dt>Пакування</dt>
+						<dd>2 <span class="rub">кг<span></dd>
+					</dl>
+					<dl>
+						<dd>
+							<table>
+								<tr>
+									<td>
+										<div class="fi-count">
+											<?php if ($_item->isSaleable()) : ?>
+												<a class="count-minus icon" href="#" onclick="return incrementItemAO(<?php echo $_item->getId() ?>, 565, -1);"></a>
+												<div class="counter-num">
+													<input class="input-counter" id="count<?php echo $_item->getId() ?>" readonly="" type="text" min="1" max="99" value="<?php echo $_item->getQty()*1 ?>">
+												</div>
+												<a class="count-plus icon" href="#" onclick="return incrementItemAO(<?php echo $_item->getId() ?>, 565, 1);"></a>
+											<?php endif; ?>											
+										</div>
+									</td>
+									<td>
+									<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn blue btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>'); return false;">
+										<?php echo $this->__('В кошик') ?>
+									</button>
+									</td>
+								</tr>
+							</table>
+						</dd>
+					</dl>
+					<dl>
+						<dd><?php echo $this->getPriceHtml($_item, true) ?></dd>
+					</dl>					
+				</div>
+			</div>
+		</a>
+	</div>
+    <?php endforeach; ?>
+    <?php else: ?>
+        <div class="item">
+           <td colspan="<?php if ($_product->isSaleable()): ?>4<?php else : ?>3<?php endif; ?>"><?php echo $this->__('No options of this product are available.') ?></td>
+        </div>
+    <?php endif; ?>
+

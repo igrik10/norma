@@ -1,0 +1,74 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<footer>
+	<div class="inner">
+		<div class="copyright">
+			<div class="copy">
+				<p><?php echo $this->getCopyright() ?></p>
+				<span class="reserved"><?php echo $this->__('Всі права захищено');?></span>
+			</div>
+			<!--noindex-->
+			<div class="social">
+				<a class="vk" rel="nofollow" href="#"></a>
+				<a class="fb" rel="nofollow" href="#"></a>
+				<a class="tw" rel="nofollow" href="#"></a>
+				<a class="ig" rel="nofollow" href="#"></a>
+			</div>
+			<!--/noindex-->
+		</div>
+
+        <?php echo $this->getChildHtml('oneclickcheckout'); ?>
+
+
+		<?php /*echo $this->getChildHtml(); */?>
+	</div>
+
+</footer>
+
+	<div id="modal"></div>
+	<div class="overlay"></div>	
+	<div id="top-link"><a href="#top"></a></div>
+<!-- Start SiteHeart code -->
+<script>
+(function(){
+var widget_id = 754108;
+_shcp =[{widget_id : widget_id}];
+var lang =(navigator.language || navigator.systemLanguage 
+|| navigator.userLanguage ||"en")
+.substr(0,2).toLowerCase();
+var url ="widget.siteheart.com/widget/sh/"+ widget_id +"/"+ lang +"/widget.js";
+var hcc = document.createElement("script");
+hcc.type ="text/javascript";
+hcc.async =true;
+hcc.src =("https:"== document.location.protocol ?"https":"http")
++"://"+ url;
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hcc, s.nextSibling);
+})();
+</script>
+<!-- End SiteHeart code --></div>
+

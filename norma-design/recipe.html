@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<head>
+	<meta charset="UTF-8">
+	<title>Доставляємо продукти з магазинів Норма вам додому. Безкоштовно!</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="768">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link rel="icon" href="files/favicon0.ico">
+	<link href="css/screen-s.css" rel="stylesheet" type="text/css">
+	<link href="css/screen-p.css" rel="stylesheet" type="text/css">
+	<link href="css/jquery00.css" rel="stylesheet" type="text/css">
+	<script src="js/jquery00.js"></script>
+	<script src="js/jquery01.js"></script>
+	<script src="js/jquery02.js"></script>
+	<script src="js/jquery03.js"></script>
+	<script src="js/jquery04.js"></script>
+	<script src="js/jquery05.js"></script>
+	<script src="js/jquery06.js"></script>
+	<script src="js/init-sit.js"></script>
+	
+</head>
+<body>
+
+	<div class="wrap">
+
+		<header>
+			<div class="inner">
+				<a class="header-logo" title="" href="/">
+					<img src="/img/logo0000.png" style="margin-top:-10px;" alt="">
+				</a>
+				<div class="phone-box">
+					Call-center: <span>0 (800) 555-55-5</span>
+					<p>Телефон для консультацій та замовлень</p>
+				</div>
+				<div class="search-bar-mini">
+					<form action="/search" method="get">
+						<div class="button">
+							<button class="icon search" type="submit"></button>
+						</div>
+						<div class="field">
+							<input class="styler" name="text" type="text" placeholder="Пошук">
+						</div>
+					</form>
+				</div>
+			</div>
+		</header>
+
+		<nav class="nav-top">
+			<div class="inner">
+				<div class="place">
+					<!--noindex-->
+					<div class="js-dd-pnt place-dropdown" id="selectDistr">
+						<span class="js-dd-trig metro icon"><i>Ваш район</i></span>
+						<div class="js-dd dropdown">
+							<div class="dropdown-scroll">
+								<ul class="dropdown-list">
+									<li><label><input type="radio" value="1" name="district">Центр</label></li><li><label><input type="radio" value="2" name="district">Садгора</label></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--/noindex-->
+				</div>
+					<div class="authoriz">
+		<a class="modalLink icon reg" href="#mreg"><i>Реєстрація</i></a>
+		<a class="modalLink icon signin" href="#msignin"><i>Вхід</i></a>
+	</div>
+
+			</div>
+		</nav>
+
+<section class="recipe">
+			<div class="inner">
+				<div class="cb-side">
+
+					<div class="col-l">
+						<div class="search-box-lcol">
+							<div class="form">
+								<form onsubmit="return recipeForm(false);" id="recipeForm" action="/recipes" method="get">
+									<div class="field">
+										<span class="label">Для пошуку рецепту виберіть категорію</span>
+										<div class="jq-selectbox jqselect" style="display: inline-block; position: relative; z-index: 10;">
+
+										<select name="cuisine" onchange="recipeForm(false);" style="margin: 0px; padding: 0px; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; opacity: 0;">
+											<option value="">Виберіть кухню</option>
+											<option value="vtorie-bluda">Другі страви</option><option value="vipechka-i-deserti">Випічка та десерти</option><option value="detskie">Дитячі</option><option value="zavtraki">Сніданок</option><option value="zakuski">Закуски</option><option value="konservirovanie">Консервовані</option><option value="osnovnie-bluda">Основні страви</option><option value="pasta-i-picca">Паста и піца</option><option value="salati">Салати</option><option value="supi">Супи</option><option value="sendvechi">Сендвічі</option>
+										</select>
+
+										<div class="jq-selectbox__select" style="position: relative"><div class="jq-selectbox__select-text">Виберіть кухню</div><div class="jq-selectbox__trigger"><div class="jq-selectbox__trigger-arrow"></div></div></div><div class="jq-selectbox__dropdown" style="position: absolute; left: 0px; display: none; height: auto; bottom: auto; top: 40px;"><ul style="position: relative; list-style: none; overflow-y: auto; overflow-x: hidden; max-height: 600px;"><li class="selected sel" style="display: block; white-space: nowrap;">Виберіть кухню</li><li class="" style="display: block; white-space: nowrap;">Другі страви</li><li class="" style="display: block; white-space: nowrap;">Випічка та десерти</li><li class="" style="display: block; white-space: nowrap;">Дитячі</li><li class="" style="display: block; white-space: nowrap;">Сніданки</li><li class="" style="display: block; white-space: nowrap;">Закуски</li><li class="" style="display: block; white-space: nowrap;">Консервування</li><li class="" style="display: block; white-space: nowrap;">Основні страви</li><li class="" style="display: block; white-space: nowrap;">Паста та піца</li><li class="" style="display: block; white-space: nowrap;">Салати</li><li class="" style="display: block; white-space: nowrap;">Супи</li><li class="" style="display: block; white-space: nowrap;">Сендвічі</li></ul></div>
+										</div>
+									</div>
+									<div class="field">
+										<span class="label">або введіть ключові слова</span>
+										<input class="styler" name="search" type="text" placeholder="Пошук">
+									</div>
+								</form>
+							</div>
+						</div>
+						<hr>
+						<div class="preview-boxes">
+							<span>Популярні рецепти з цієї тематики</span>
+								<a href="#" class="preview-box">
+									<div class="preview-img">
+										<img src="/img/r206-465.jpg" alt="Індійка фарширована рисом">
+									</div>
+									<h4>Індійка фарширована рисом</h4>
+								</a>
+								<a href="/recipe/telnoe-iz-lososiny-rossiya" class="preview-box">
+									<div class="preview-img">
+										<img src="/img/r206-442.jpg" alt="Тельне з лососини">
+									</div>
+									<h4>Тельне з лососини</h4>
+								</a>
+								<a href="#" class="preview-box">
+									<div class="preview-img">
+										<img src="/img/r206-193.jpg" alt="Полента з помідорами">
+									</div>
+									<h4>Полента з помідорами</h4>
+								</a>
+						</div>
+					</div>
+
+					<div class="col-r">
+						<article class="recipe-item">
+							<h1 class="h1 bb">Словацькі галушки з бринзою</h1>
+							<div class="info">
+								<div class="recipe-img">
+									<img src="/img/r280-776.jpg" alt="Словацкие галушки с брынзой">
+								</div>
+								<div class="recipe-ingredients">
+									<h4 class="h4">Інгредієнти</h4>
+									<table class="table">
+										<tbody>
+												<tr>
+													<th>Бринза</th>
+													<td>100 гр.</td>
+												</tr>
+												<tr>
+													<th>Картопля</th>
+													<td>350 гр.</td>
+												</tr>
+												<tr>
+													<th>Копчена корейка</th>
+													<td>50 гр.</td>
+												</tr>
+												<tr>
+													<th>Мука</th>
+													<td>150 гр.</td>
+												</tr>
+												<tr>
+													<th>Вершкове масло</th>
+													<td></td>
+												</tr>
+												<tr>
+													<th>Сіль</th>
+													<td>на смак</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="recipe-instruction">
+								<h4 class="h4 bb">Інструкція</h4>
+								<p><span style="font-size: larger;">&nbsp;<i style="text-align: justify;">350 гр. картофеля; 150 гр. муки; 100 гр. брынзы; 50 гр. копченой корейки (мелко нарезать и приготовить шкварки); соль по вкусу; сливочное масло.</i>  </span></p>
+<p><span style="font-size: larger;">Очистити картоплю, натерти і віджати, додати борошно, сіль і добре розмішати дерев'яною лопаткою - тісто має бути крутим. Розподілити тісто по дерев'яній дошці пластом товщиною близько 5 мм. За допомогою ножа або чайної ложки відокремлювати шматочки і опускати в киплячу підсолену воду. Як тільки спливуть, вийняти шумівкою на блюдо. Полити розтопленим вершковим маслом, посипати бринзою і шкварками.&nbsp;</span><o:p></o:p></p>
+							</div>
+
+							<div class="recipe-instruction">
+								<h4 class="h4 bb">Замовити компоненти:</h4>
+
+								<div class="container">
+									<div class="b-similar components">
+										<div class="items">										
+											<div class="item">
+												<a href="/restaurants/menu/etaj">
+													<div class="img line">
+														<img src="/img/brinzaza.jpg" alt="">
+													</div>
+													<div class="info">
+														<h3>Бринза</h3>
+														<small>Бринза овеча / коров'яча</small>
+															<div class="dop-info icon">Доступні також в супер меню</div>
+														<div class="dl-list">
+															<dl>
+																<dt>Пакування</dt>
+																<dd>2 <span class="rub">кг<span></dd>
+															</dl>
+															<dl>
+																<dt>Вартість доставки</dt>
+																<dd>Безкоштовно</dd>
+															</dl>
+															<dl>
+																<dt>Час доставки</dt>
+																<dd>До 1,5 годин</dd>
+															</dl>
+															<dl>
+																<dd>
+																	<table>
+																		<tr>
+																			<td>
+																				<div class="fi-count">
+																					<a class="count-minus icon" href="#" onclick="return incrementItem(305739, 565, -1);"></a>
+																					<div class="counter-num">
+																						<input class="input-counter" id="count305739" readonly="" type="text" min="1" max="99" value="1">
+																					</div>
+																					<a class="count-plus icon" href="#" onclick="return incrementItem(305739, 565, 1);"></a>
+																				</div>
+																			</td>
+																			<td>
+																				<button class="btn green">В кошик</button>
+																			</td>
+																		</tr>
+																	</table>
+																</dd>
+															</dl>															
+														</div>
+														<div class="rating">
+															8.6/10
+															<span class="stars">
+																<i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star-dis"></i> <i class="star-dis"></i> 
+															</span>
+														</div>
+													</div>
+												</a>
+											</div>
+																				
+											<div class="item">
+												<a href="/restaurants/menu/etaj">
+													<div class="img line">
+														<img src="/img/18cb7f1c8d.jpg" alt="">
+													</div>
+													<div class="info">
+														<h3>Картопля</h3>
+														<small>Картопля українська / білоруська</small>
+															<div class="dop-info icon">Доступні також в інших пакетах</div>
+														<div class="dl-list">
+															<dl>
+																<dt>Пакування</dt>
+																<dd>5 <span class="rub">кг<span></dd>
+															</dl>
+															<dl>
+																<dt>Вартість доставки</dt>
+																<dd>Безкоштовно</dd>
+															</dl>
+															<dl>
+																<dt>Час доставки</dt>
+																<dd>До 1,5 годин</dd>
+															</dl>
+															<dl>
+																<dd>
+																	<table>
+																		<tr>
+																			<td>
+																				<div class="fi-count">
+																					<a class="count-minus icon" href="#" onclick="return incrementItem(305739, 565, -1);"></a>
+																					<div class="counter-num">
+																						<input class="input-counter" id="count305739" readonly="" type="text" min="1" max="99" value="1">
+																					</div>
+																					<a class="count-plus icon" href="#" onclick="return incrementItem(305739, 565, 1);"></a>
+																				</div>
+																			</td>
+																			<td>
+																				<button class="btn green">В кошик</button>
+																			</td>
+																		</tr>
+																	</table>
+																</dd>
+															</dl>															
+														</div>
+														<div class="rating">
+															8.6/10
+															<span class="stars">
+																<i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star-dis"></i> <i class="star-dis"></i> 
+															</span>
+														</div>
+													</div>
+												</a>
+											</div>
+																				
+											<div class="item">
+												<a href="/restaurants/menu/etaj">
+													<div class="img line">
+														<img src="/img/morkva.jpg" alt="">
+													</div>
+													<div class="info">
+														<h3>Морква</h3>
+														<small>Морква українська очищена</small>
+															<div class="dop-info icon">Доступна по акційній ціні</div>
+														<div class="dl-list">
+															<dl>
+																<dt>Пакування</dt>
+																<dd>1 <span class="rub">кг<span></dd>
+															</dl>
+															<dl>
+																<dt>Вартість доставки</dt>
+																<dd>Безкоштовно</dd>
+															</dl>
+															<dl>
+																<dt>Час доставки</dt>
+																<dd>До 1,5 годин</dd>
+															</dl>
+															<dl>
+																<dd>
+																	<table>
+																		<tr>
+																			<td>
+																				<div class="fi-count">
+																					<a class="count-minus icon" href="#" onclick="return incrementItem(305739, 565, -1);"></a>
+																					<div class="counter-num">
+																						<input class="input-counter" id="count305739" readonly="" type="text" min="1" max="99" value="1">
+																					</div>
+																					<a class="count-plus icon" href="#" onclick="return incrementItem(305739, 565, 1);"></a>
+																				</div>
+																			</td>
+																			<td>
+																				<button class="btn green">В кошик</button>
+																			</td>
+																		</tr>
+																	</table>
+																</dd>
+															</dl>															
+														</div>
+														<div class="rating">
+															8.6/10
+															<span class="stars">
+																<i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star-dis"></i> <i class="star-dis"></i> 
+															</span>
+														</div>
+													</div>
+												</a>
+											</div>
+																				
+											<div class="item">
+												<a href="/restaurants/menu/etaj">
+													<div class="img line">
+														<img src="/img/muka1.jpg" alt="">
+													</div>
+													<div class="info">
+														<h3>Борощно</h3>
+														<small>Борошно на розсип та в мішках</small>
+															<div class="dop-info icon">Доступно під замовлення</div>
+														<div class="dl-list">
+															<dl>
+																<dt>Пакування</dt>
+																<dd>1 <span class="rub">кг<span></dd>
+															</dl>
+															<dl>
+																<dt>Вартість доставки</dt>
+																<dd>Безкоштовно</dd>
+															</dl>
+															<dl>
+																<dt>Час доставки</dt>
+																<dd>До 1,5 годин</dd>
+															</dl>
+															<dl>
+																<dd>
+																	<table>
+																		<tr>
+																			<td>
+																				<div class="fi-count">
+																					<a class="count-minus icon" href="#" onclick="return incrementItem(305739, 565, -1);"></a>
+																					<div class="counter-num">
+																						<input class="input-counter" id="count305739" readonly="" type="text" min="1" max="99" value="1">
+																					</div>
+																					<a class="count-plus icon" href="#" onclick="return incrementItem(305739, 565, 1);"></a>
+																				</div>
+																			</td>
+																			<td>
+																				<button class="btn green">В кошик</button>
+																			</td>
+																		</tr>
+																	</table>
+																</dd>
+															</dl>															
+														</div>
+														<div class="rating">
+															8.6/10
+															<span class="stars">
+																<i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star-dis"></i> <i class="star-dis"></i> 
+															</span>
+														</div>
+													</div>
+												</a>
+											</div>
+																				
+											<div class="item">
+												<a href="/restaurants/menu/etaj">
+													<div class="img line">
+														<img src="/img/maslolo.jpg" alt="">
+													</div>
+													<div class="info">
+														<h3>Вершкове масло</h3>
+														<small>Вершкове масло в упаковці</small>
+															<div class="dop-info icon">Вершкове масло по акційній ціні</div>
+														<div class="dl-list">
+															<dl>
+																<dt>Пакування</dt>
+																<dd>0,5 <span class="rub">кг<span></dd>
+															</dl>
+															<dl>
+																<dt>Вартість доставки</dt>
+																<dd>Безкоштовно</dd>
+															</dl>
+															<dl>
+																<dt>Час доставки</dt>
+																<dd>До 1,5 годин</dd>
+															</dl>
+															<dl>
+																<dd>
+																	<table>
+																		<tr>
+																			<td>
+																				<div class="fi-count">
+																					<a class="count-minus icon" href="#" onclick="return incrementItem(305739, 565, -1);"></a>
+																					<div class="counter-num">
+																						<input class="input-counter" id="count305739" readonly="" type="text" min="1" max="99" value="1">
+																					</div>
+																					<a class="count-plus icon" href="#" onclick="return incrementItem(305739, 565, 1);"></a>
+																				</div>
+																			</td>
+																			<td>
+																				<button class="btn green">В кошик</button>
+																			</td>
+																		</tr>
+																	</table>
+																</dd>
+															</dl>															
+														</div>
+														<div class="rating">
+															8.6/10
+															<span class="stars">
+																<i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star"></i> <i class="star-dis"></i> <i class="star-dis"></i> 
+															</span>
+														</div>
+													</div>
+												</a>
+											</div>								
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</article>
+
+					</div>
+
+				</div>
+			</div>
+		</section>
+		
+<footer>
+			<div class="inner">
+				<div class="copyright">
+					<div class="copy">
+						<p>© 2013-2014 Норма, Чернівці.</p>
+						<span class="reserved">Всі права захищено</span>
+					</div>
+					<!--noindex-->
+					<div class="social">
+						<a class="vk" rel="nofollow" href="#"></a>
+						<a class="fb" rel="nofollow" href="#"></a>
+						<a class="tw" rel="nofollow" href="#"></a>
+						<a class="ig" rel="nofollow" href="#"></a>
+					</div>
+					<!--/noindex-->
+				</div>
+				<div class="index-footer-nav">
+					<!--noindex-->
+					<div class="site-map">
+						<ul>
+							<li><a rel="nofollow" href="/about">Про нас</a></li>
+							<li><a rel="nofollow" href="/contacts">Контакти</a></li>
+							<li><a rel="nofollow" href="/partners">Інформація для партнерів</a></li>
+							<li><a rel="nofollow" href="/agreement">Правила користувача</a></li>
+						</ul>
+					</div>
+					<!--/noindex-->
+					<div class="dopinfo">
+						<ul>
+							<li><a href="#">Доставка піци</a></li>
+							<li><a href="#">Доставка суші</a></li>
+							<li><a href="#">Доставка їжі</a></li>
+							<li><a href="#">Доставка продуктів</a></li>
+							<li><a href="#">Рецепти</a></li>
+						</ul>
+					</div>
+					<div class="dop-link">
+						<div class="gifts">
+							<a rel="nofollow" href="#">
+								<i>Подарки <br> от Норма</i>
+							</a>
+						</div>
+						<div class="cookery">
+							<a rel="nofollow" href="#">
+								<i>Кулінарний <br> портал</i>
+							</a>
+						</div>
+					</div>
+
+					<div class="dopinfo">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5312.602511330349!2d25.93447644983627!3d48.25857684602397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47340f30e4347393%3A0x4901fc4591d3991c!2z0J3QvtGA0LzQsA!5e0!3m2!1sru!2sua!4v1419810208571" width="325" height="135" frameborder="0" style="border:0"></iframe>
+					</div>
+
+					<div class="feedback-link">
+						<a href="#mfeedback" class="modalLink"><b>Написати нам</b></a>
+					</div>
+				</div>
+			</div>
+</footer>
+
+	</div>
+
+	<div id="modal"></div>
+	<div class="overlay"></div>	
+
+</body>
+</html>

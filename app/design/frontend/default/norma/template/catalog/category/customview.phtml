@@ -1,0 +1,25 @@
+<?php
+	$_helper    = $this->helper('catalog/output');
+    $_category  = $this->getCurrentCategory();
+?>
+<section class="promo b-recipes">
+	<div class="bg-form-3">
+		<div class="inner">
+			<div class="personage pers-4"></div>
+			<h1 class="h1w"><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
+			<div class="cont">
+					 <?php if($this->isContentMode()): ?>
+						<?php echo $this->getCmsBlockHtml() ?>
+
+					<?php elseif($this->isMixedMode()): ?>
+						<?php echo $this->getCmsBlockHtml() ?>
+						<?php echo $this->getProductListHtml() ?>
+
+					<?php else: ?>
+						<?php echo $this->getProductListHtml() ?>
+					<?php endif; ?>
+			</div>
+		</div>
+	</div>
+</section>
+ 

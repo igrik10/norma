@@ -1,0 +1,32 @@
+<!--<ul class="nav-items cat">
+		<li>
+			<a href="#" class="icon">Бакалія</a>
+			<ul class="nav-sub-items">
+				<li><a href="/category.html">Все для суші</a></li>
+				<li><a href="/category.html">Крупи</a></li>
+				<li><a href="/category.html">Макаронні вироби</a></li>
+				<li><a href="/category.html">Мука і випічка</a></li>
+				<li><a href="/category.html">Сіль, цукор, сода</a></li>
+				<li><a href="/category.html">Майонези, соуси</a></li>
+				<li><a href="/category.html">Спеції і приправи</a></li>
+			</ul>
+		</li>																																			
+</ul>-->
+<ol>
+<?php foreach ($this->getItems() as $_item):?>
+    <li>
+        <?php if ($_item->getIsCurrent()): ?>
+        <span class="adj-nav-category-current"><?php echo $_item->getLabel() ?></span>
+        <?php  else: ?>
+		<?php if (Mage::getStoreConfig('layerednav/layerednav/reload_categories')) { ?>
+                    <a id="cat-<?php echo $_item->getCategoryId()?>" href="<?php echo $this->htmlEscape($_item->getUri()) ?>" class="adj-nav-pad<?php echo $_item->getLevel()?>"><?php echo $_item->getLabel() ?></a>
+                <?php } else { ?>
+                        <a id="cat-<?php echo $_item->getCategoryId()?>" href="<?php echo $this->htmlEscape($_item->getUri()) ?>" class="fme_layered_category adj-nav-pad<?php echo $_item->getLevel()?>"><?php echo $_item->getLabel() ?></a>
+                <?php }
+                   if($_item->getCount()): ?>  
+                     (<?php echo $_item->getCount() ?>) 
+            <?php endif ?>
+        <?php endif ?>
+    </li>
+<?php endforeach ?>
+</ol>

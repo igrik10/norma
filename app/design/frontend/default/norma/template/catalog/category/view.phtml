@@ -1,0 +1,168 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @see Mage_Catalog_Block_Category_View
+ */
+?>
+<?php
+    $_helper    = $this->helper('catalog/output');
+    $_category  = $this->getCurrentCategory();
+   /* $_imgHtml   = '';
+    if ($_imgUrl = $_category->getImageUrl()) {
+        $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" /></p>';
+        $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
+    }*/
+?>
+<?/*
+<div class="page-title category-title">
+    <?php if($this->IsRssCatalogEnable() && $this->IsTopCategory()): ?>
+        <a href="<?php echo $this->getRssLink() ?>" class="link-rss"><?php echo $this->__('Subscribe to RSS Feed') ?></a>
+    <?php endif; ?>
+    <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
+</div>
+*/?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+<?php /*if($_imgUrl): ?>
+    <?php echo $_imgHtml ?>
+<?php endif; */?>
+
+<?php /*if($_description=$this->getCurrentCategory()->getDescription()): ?>
+    <div class="category-description std">
+        <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+    </div>
+    <?php endif; */?>
+
+<?php if($this->isContentMode()): ?>
+    <?php echo $this->getCmsBlockHtml() ?>
+
+<?php elseif($this->isMixedMode()): ?>
+    <?php echo $this->getCmsBlockHtml() ?>
+    <?php echo $this->getProductListHtml() ?>
+
+<?php else: ?>
+    <?php echo $this->getProductListHtml() ?>
+<?php endif; ?>
+	<div id="mcart" class="modal modal-cart">
+		<div class="form-cart">
+			<span class="close-modal">Закрити</span>
+
+			<h4 class="popup_cart-title">Корзина</h4>
+			<div class="food-list edit">
+					<div class="food-item visible" id="item230516">
+						<table>
+							<tbody><tr>
+								<td class="fi-title">Курка охолоджена </td>
+								<td class="fi-img">
+									<div class="img"><img src="/img/12601_normal.jpg" alt="Курка охолоджена"></div>
+									<div class="fi-desc">
+										<img src="/img/12601_normal.jpg" alt="Пепперони 30 см. ">
+										 текст опис текст опис текст опис текст опис текст
+									</div>
+								</td>
+								<td class="fi-count">
+									<a class="count-minus icon" href="#" onclick="return incrementItem(245, 239, -1);"></a>
+									<div class="counter-num">
+										<input class="input-counter" id="count245" readonly="" type="text" min="1" max="99" value="5">
+									</div>
+									<a class="count-plus icon" href="#" onclick="return incrementItem(245, 239, 1);"></a>
+								</td>
+								<td class="fi-price"><span>270 <i class="rub">грн</i></span></td>
+								<td class="fi-remove">
+									<a href="#" onclick="return removeItem(245, 239);" class="remove-item icon" title="Удалить блюдо из заказа"></a>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+					<div class="food-item visible" id="item230516">
+						<table>
+							<tbody><tr>
+								<td class="fi-title">Сосиски охолоджені </td>
+								<td class="fi-img">
+									<div class="img"><img src="/img/17550_normal.jpg" alt="Сосиски охолоджені "></div>
+									<div class="fi-desc">
+										<img src="/img/17550_normal.jpg" alt="Пепероні 30 см. ">
+										 текст опис текст опис текст опис текст опис текст
+									</div>
+								</td>
+								<td class="fi-count">
+									<a class="count-minus icon" href="#" onclick="return incrementItem(246, 239, -1);"></a>
+									<div class="counter-num">
+										<input class="input-counter" id="count246" readonly="" type="text" min="1" max="99" value="3">
+									</div>
+									<a class="count-plus icon" href="#" onclick="return incrementItem(246, 239, 1);"></a>
+								</td>
+								<td class="fi-price"><span>84 <i class="rub">грн</i></span></td>
+								<td class="fi-remove">
+									<a href="#" onclick="return removeItem(246, 239);" class="remove-item icon" title="Удалить блюдо из заказа"></a>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+					<div class="food-item visible" id="item230516">
+						<table>
+							<tbody><tr>
+								<td class="fi-title">Свинний окорок</td>
+								<td class="fi-img">
+									<div class="img"><img src="/img/13159_square.jpg" alt="Свинний окорок"></div>
+									<div class="fi-desc">
+										<img src="/img/13159_square.jpg" alt="Свинний окорок">
+										 текст опис текст опис текст опис текст опис текст
+									</div>
+								</td>
+								<td class="fi-count">
+									<a class="count-minus icon" href="#" onclick="return incrementItem(247, 239, -1);"></a>
+									<div class="counter-num">
+										<input class="input-counter" id="count247" readonly="" type="text" min="1" max="99" value="1">
+									</div>
+									<a class="count-plus icon" href="#" onclick="return incrementItem(247, 239, 1);"></a>
+								</td>
+								<td class="fi-price"><span>40 <i class="rub">грн</i></span></td>
+								<td class="fi-remove">
+									<a href="#" onclick="return removeItem(247, 239);" class="remove-item icon" title="Видалити товар із корзини"></a>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>				
+
+				<div class="popup-all-price"><span>всього:</span> 394грн.</div>
+					
+				<div class="checkout" style="margin-top:20px;">
+					<div class="box-tooltip">
+						<button class="btn blue" onclick="orderForm(239, 0);">Оформити замовлення</button>
+					</div>
+					<a href="#" class="back"></a>
+					<button class="btn green3 bt-cloze" onclick="editCart();">Повернутись до покупок<span></span></button>
+				</div>
+			</div>
+		</div>
+
+		<a href="#mcart" id="cart_click" class="modalLink"></a>
+	</div>

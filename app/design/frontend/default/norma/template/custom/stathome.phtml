@@ -1,0 +1,37 @@
+<?php
+    function renderNumber($number){
+        if( !is_null($number) ){
+            $number = number_format($number,0,'',".");
+            $elements = str_split($number);
+
+            foreach($elements as $element){
+
+                if ($element == '.'){
+                    echo '<i class="n_s">&nbsp;</i>';
+                    continue;
+                }
+                echo '<i class="num n'.$element.'">&nbsp;</i>';
+            }
+        }else{
+        echo '<i class="num n0">&nbsp;</i>';
+        }
+    }
+?>
+<section class="stat">
+    <div class="personage">&nbsp;</div>
+        <div class="inner">
+            <h3>Трохи статистики</h3>
+            <div class="items">
+                <div class="item">
+                    <div class="nums">
+                        <?php renderNumber(Mage::getModel('sales/order')->getCollection()->getSize()); ?>
+                    </div>
+                <span>Замовлень всього</span></div>
+                <div class="item">
+                    <div class="nums">
+                        <?php renderNumber(Mage::getModel('customer/customer')->getCollection()->getSize()); ?>
+                    </div>
+            <span>Зареєстрованих <br /> користувачів</span></div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,81 @@
+<script type="text/javascript">
+	/*jQuery(function() {
+		jQuery("div[id^='carousel']").elastislide({
+			minItems	: 3
+		});
+		jQuery("div[id^='carousel'] a").on('click', function () {
+			window.location.href = jQuery(this).attr('href');
+		});
+	});*/
+</script> 
+		<section class="promo promo-index">
+			<div class="bg-form-1">
+				<div class="inner">
+					<div class="advant">
+						<?php echo Mage::app()->getLayout()->createBlock('cms/block')->setBlockId('home-befor-slider')->toHtml();?>
+					</div>
+					<!--<div class="tabs">
+						<div class="tab visible tab-product">
+							<div class="items">
+								<div id="carousel" class="es-carousel-wrapper">
+									<div class="es-carousel">
+										<ul>
+                							<?php
+												/*$_helper = Mage::helper('catalog/category');
+												$_categories = $_helper->getStoreCategories();
+												if (count($_categories) > 0):
+												  foreach($_categories as $_category):
+													  $cur_category=Mage::getModel('catalog/category')->load($_category->getId());
+													  $_imageUrl = $cur_category->getImageUrl();
+													  $active = $cur_category->getIsActive();
+													  ?>
+														<li> 
+															<?php if($active):?>
+															<a href="<?php echo $cur_category->getUrl(); ?>" class="item">
+																<img src="<?php echo $_imageUrl; ?>" alt="<?php echo $cur_category->getName(); ?>">
+																<h3><?php echo $cur_category->getName(); ?></h3>
+															</a>
+															<?php endif;?>
+														</li>	
+													  <?
+													endforeach;
+												endif;*/
+											?>	
+					  					</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>-->
+				</div>
+			</div>
+		</section>
+		
+		<section class="menu-sprite">
+			<div class="inner">
+				<ul>				
+				<?php
+					$_helper = Mage::helper('catalog/category');
+					$_categories = $_helper->getStoreCategories();
+					if (count($_categories) > 0):
+					  foreach($_categories as $key => $_category):
+						  $cur_category=Mage::getModel('catalog/category')->load($_category->getId());
+						  $_imageUrl = $cur_category->getImageUrl();
+						  $active = $cur_category->getIsActive();
+						  ?>
+							<?php if($active):?>
+							<!--<li class="sprite-<?php echo $key;?>">--> 	
+							<li class="sprite">
+								<a href="<?php echo $cur_category->getUrl(); ?>" class="item">
+									<img src="<?php echo $_imageUrl; ?>" alt="<?php echo $cur_category->getName(); ?>"/>
+									<?php echo $cur_category->getName(); ?>
+								</a>
+							</li>
+							<?php endif;?>
+						  <?
+						endforeach;
+					endif;
+				?>	
+				</ul>			
+			</div>
+		</section>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+ <default>
+  <!-- Remove callouts and rarely used stuff -->
+	<remove name="right.poll"/>
+	<remove name="right.permanent.callout"/>
+	<remove name="left.permanent.callout"/>
+	<remove name="right.reports.product.viewed"/>   <!--Viewed Products-->
+    <remove name="right.reports.product.compared"/> <!--Compared Products-->
+	<remove name="paypal.partner.right.logo"/>
+	<remove name="catalog.topnav"/>
+	<remove name="wishlist_link"/>
+	<!--<remove name="checkout_cart_link" />-->
+	<!--<remove name="top.links"/>-->
+	<remove name="breadcrumbs"/>
+
+  <!-- add the local stylesheet -->
+
+   <reference name="head">
+		<action method="addCss"><stylesheet>css/screen-s.css</stylesheet></action>
+		<action method="addCss"><stylesheet>css/screen-p.css</stylesheet></action>
+		<action method="addCss"><stylesheet>css/jquery00.css</stylesheet></action>
+		<!--<action method="addCss"><stylesheet>css/tabs.css</stylesheet></action>-->
+		
+		<action method="addCss"><stylesheet>css/custom.css</stylesheet></action>
+		
+		<action method="addItem"><type>skin_js</type><name>js/jquery00.js</name></action>
+		<action method="addItem"><type>skin_js</type><name>js/noconflict.js</name></action>
+		<action method="addItem"><type>skin_js</type><name>js/jquery01.js</name></action>
+		<action method="addItem"><type>skin_js</type><name>js/jquery02.js</name></action>
+		<action method="addItem"><type>skin_js</type><name>js/jquery03.js</name></action>
+		<action method="addItem"><type>skin_js</type><name>js/jquery04.js</name></action>
+		<action method="addItem"><type>skin_js</type><name>js/jquery05.js</name></action>
+		<action method="addItem"><type>skin_js</type><name>js/jquery06.js</name></action>		
+		<action method="addItem"><type>skin_js</type><name>js/init-sit.js</name></action>
+		
+		<action method="addCss"><stylesheet>css/carousel/elastislide.css</stylesheet></action>
+		<action method="addItem"><type>skin_js</type><name>css/carousel/jquery.easing.1.3.js</name></action>
+		<action method="addItem"><type>skin_js</type><name>css/carousel/jquery.elastislide.js</name></action>
+		
+   </reference>
+   
+  </default>
+  
+    <checkout_cart_index translate="label">
+		<remove name="checkout.cart.methods"/>
+		<remove name="checkout.cart.coupon"/>
+		<remove name="checkout.cart.shipping"/>
+	</checkout_cart_index>	
+	
+	<ajaxcart>
+		<remove name="checkout.cart.methods"/>
+		<remove name="checkout.cart.coupon"/>
+		<remove name="checkout.cart.shipping"/>
+	</ajaxcart>
+  
+</layout>

@@ -1,0 +1,28 @@
+		
+<section class="menu-sprite no-bg">
+	<div class="inner">
+		<ul>
+			<?php
+				$_helper = Mage::helper('catalog/category');
+				$_categories = $_helper->getStoreCategories();
+				if (count($_categories) > 0):
+				  foreach($_categories as $key => $_category):
+					  $cur_category=Mage::getModel('catalog/category')->load($_category->getId());
+					  $_imageUrl = $cur_category->getImageUrl();
+					  $active = $cur_category->getIsActive();
+					  ?><?php if($active):?>
+					<!--<li class="sprite-<?php echo $key;?>">--> 	
+							<li class="sprite">
+								<a href="<?php echo $cur_category->getUrl(); ?>" class="item">
+									<img src="<?php echo $_imageUrl; ?>" alt="<?php echo $cur_category->getName(); ?>"/>
+									<?php echo $cur_category->getName(); ?>
+								</a>
+							</li>
+						<?php endif;?>
+					  <?
+					endforeach;
+				endif;
+			?>   
+		</ul>			
+	</div>
+</section>

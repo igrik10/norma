@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<head>
+	<meta charset="UTF-8">
+	<title>Доставляємо продукти з магазинів Норма вам додому. Безкоштовно!</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="768">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link rel="icon" href="files/favicon0.ico">
+	<link href="css/screen-s.css" rel="stylesheet" type="text/css">
+	<link href="css/screen-p.css" rel="stylesheet" type="text/css">
+	<link href="css/jquery00.css" rel="stylesheet" type="text/css">
+	<script src="js/jquery00.js"></script>
+	<script src="js/jquery01.js"></script>
+	<script src="js/jquery02.js"></script>
+	<script src="js/jquery03.js"></script>
+	<script src="js/jquery04.js"></script>
+	<script src="js/jquery05.js"></script>
+	<script src="js/jquery06.js"></script>
+	<script src="js/init-sit.js"></script>
+
+	<script>
+			$(document).ready(function() {
+			    $("#slider").slider({
+			        min: 0,
+			        max: 100,
+			        step: 1,
+			        values: [10, 90],
+			        slide: function(event, ui) {
+			            for (var i = 0; i < ui.values.length; ++i) {
+			                $("input.sliderValue[data-index=" + i + "]").val(ui.values[i]);
+			            }
+			        }
+			    });
+
+			    $("input.sliderValue").change(function() {
+			        var $this = $(this);
+			        $("#slider").slider("values", $this.data("index"), $this.val());
+			    });
+			});
+	</script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	
+<script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+ </script>	
+
+ 		<link rel="stylesheet" type="text/css" href="/carousel/elastislide.css" />
+		<script type="text/javascript" src="/carousel/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="/carousel/jquery.elastislide.js"></script>
+		<script type="text/javascript">
+			$(function() {
+
+                $("div[id^='carousel']").elastislide({
+                    minItems	: 3
+                });
+                
+                
+                $("div[id^='carousel'] a").on('click', function () {
+                    window.location.href = $(this).attr('href');
+                });
+            });
+		</script>
+	
+</head>
+<body>
+
+	<div class="wrap">
+
+		<header>
+			<div class="inner">
+				<a class="header-logo" title="" href="/">
+					<img src="/img/logo0000.png" style="margin-top:-10px;" alt="">
+				</a>
+				<div class="phone-box">
+					Call-center: <span>0 (800) 555-55-5</span>
+					<p>Телефон для консультацій та замовлень</p>
+				</div>
+				<div class="search-bar-mini">
+					<form action="/search" method="get">
+						<div class="button">
+							<button class="icon search" type="submit"></button>
+						</div>
+						<div class="field">
+							<input class="styler" name="text" type="text" placeholder="Пошук">
+						</div>
+					</form>
+				</div>
+			</div>
+		</header>
+
+		<nav class="nav-top">
+			<div class="inner">
+				<div class="place">
+					<!--noindex-->
+					<div class="js-dd-pnt place-dropdown" id="selectDistr">
+						<span class="js-dd-trig metro icon"><i>Ваш район</i></span>
+						<div class="js-dd dropdown">
+							<div class="dropdown-scroll">
+								<ul class="dropdown-list">
+									<li><label><input type="radio" value="1" name="district">Центр</label></li><li><label><input type="radio" value="2" name="district">Садгора</label></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--/noindex-->
+				</div>
+					<div class="authoriz">
+		<a class="modalLink icon reg" href="#mreg"><i>Реєстрація</i></a>
+		<a class="modalLink icon signin" href="#msignin"><i>Вхід</i></a>
+	</div>
+
+			</div>
+		</nav>
+
+<section class="s-checkout">
+			<div class="inner">
+				<div class="checkout-items">
+								<div class="checkout-item visible" id="org239">
+		<h2>Корзина</h2>
+		
+		<div class="food-list">
+				<div class="food-item visible" id="item230516">
+					<table>
+						<tbody><tr>
+							<td class="fi-title">Курка охолоджена </td>
+							<td class="fi-img">
+								<div class="img"><img src="/img/12601_normal.jpg" alt="Курка охолоджена"></div>
+								<div class="fi-desc">
+									<img src="/img/12601_normal.jpg" alt="Пепперони 30 см. ">
+									 текст опис текст опис текст опис текст опис текст
+								</div>
+							</td>
+							<td class="fi-count">
+								<a class="count-minus icon" href="#" onclick="return incrementItem(230516, 239, -1);"></a>
+								<div class="counter-num">
+									<input class="input-counter" id="count230516" readonly="" type="text" min="1" max="99" value="1">
+								</div>
+								<a class="count-plus icon" href="#" onclick="return incrementItem(230516, 239, 1);"></a>
+							</td>
+							<td class="fi-price"><span>485 <i class="rub">грн</i></span></td>
+							<td class="fi-remove">
+								<a href="#" onclick="return removeItem(230516, 239);" class="remove-item icon" title="Удалить блюдо из заказа"></a>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="food-item visible" id="item230516">
+					<table>
+						<tbody><tr>
+							<td class="fi-title">Сосиски охолоджені </td>
+							<td class="fi-img">
+								<div class="img"><img src="/img/17550_normal.jpg" alt="Сосиски охолоджені "></div>
+								<div class="fi-desc">
+									<img src="/img/17550_normal.jpg" alt="Пепероні 30 см. ">
+									 текст опис текст опис текст опис текст опис текст
+								</div>
+							</td>
+							<td class="fi-count">
+								<a class="count-minus icon" href="#" onclick="return incrementItem(230516, 239, -1);"></a>
+								<div class="counter-num">
+									<input class="input-counter" id="count230516" readonly="" type="text" min="1" max="99" value="1">
+								</div>
+								<a class="count-plus icon" href="#" onclick="return incrementItem(230516, 239, 1);"></a>
+							</td>
+							<td class="fi-price"><span>485 <i class="rub">грн</i></span></td>
+							<td class="fi-remove">
+								<a href="#" onclick="return removeItem(230516, 239);" class="remove-item icon" title="Удалить блюдо из заказа"></a>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="food-item visible" id="item230516">
+					<table>
+						<tbody><tr>
+							<td class="fi-title">Свинний окорок</td>
+							<td class="fi-img">
+								<div class="img"><img src="/img/13159_square.jpg" alt="Свинний окорок"></div>
+								<div class="fi-desc">
+									<img src="/img/13159_square.jpg" alt="Свинний окорок">
+									 текст опис текст опис текст опис текст опис текст
+								</div>
+							</td>
+							<td class="fi-count">
+								<a class="count-minus icon" href="#" onclick="return incrementItem(230516, 239, -1);"></a>
+								<div class="counter-num">
+									<input class="input-counter" id="count230516" readonly="" type="text" min="1" max="99" value="1">
+								</div>
+								<a class="count-plus icon" href="#" onclick="return incrementItem(230516, 239, 1);"></a>
+							</td>
+							<td class="fi-price"><span>485 <i class="rub">грн</i></span></td>
+							<td class="fi-remove">
+								<a href="#" onclick="return removeItem(230516, 239);" class="remove-item icon" title="Видалити товар із корзини"></a>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>				
+			<div class="checkout">
+				<div class="box-tooltip">
+					<button class="btn green" onclick="orderForm(239, 0);">Оформити замовлення</button>
+					
+					
+					
+					
+				</div>
+				<a href="#" class="back">Повернутись до покупок</a>
+			</div>
+		</div>
+		<div class="food-order">
+			<div class="row">Мінімальна сума замовлення: <span>600 <i class="rub">грн.</i></span></div>
+			<div class="row">Сума замовлення: <span>1815 <i class="rub">грн.</i></span></div>
+			<div class="row">Вартість доставки:
+				<span>
+					100<i class="rub">грн.</i>
+					
+				</span>
+			</div>
+			<div class="total-price"><strong>Разом: </strong><span>1915<i class="rub">грн.</i></span></div>
+		</div>
+		<a href="#" onclick="return removeOrg(239);" class="remove-item icon" title="Очистити корзину"></a>
+	</div>	
+	
+
+					<div class="b-empty hide">
+						Нажаль у вашій корзині немає товарів,<br> попробуйте додати їх із <a href="#">каталогу</a>.
+					</div>
+				</div>
+
+
+
+			<h3 style="margin-bottom:10px;">Також рекомендуємо:</h3>
+						<div class="container restaurant-menu">							
+							<div class="b-popular-food cartview">
+								<div class="items">
+
+											<div class="item" data-id="76050">		
+												<div class="img">
+													<img src="/img/12601_normal.jpg" alt="Курка охолоджена">
+													<div class="info">текст опис текст опис текст опис текст опис текст опис текст опис текст опис текст опис </div>
+												</div>
+												<div class="title">
+													<h3><span>Курка охолоджена</span></h3>
+												</div>
+												<div class="price"> 190 <span class="rub">грн</span></div>
+													<div class="button">
+														<button class="btn green order">Замовити<span></span></button>
+													</div>
+											</div>
+
+											<div class="item" data-id="76050">		
+												<div class="img">
+													<img src="/img/17550_normal.jpg" alt="Сосиски Філейні">
+													<div class="info">текст опис текст опис текст опис текст опис текст опис текст опис текст опис текст опис </div>
+												</div>
+												<div class="title">
+													<h3><span>Сосиски Філейні</span></h3>
+												</div>
+												<div class="price"> 190 <span class="rub">грн</span></div>
+													<div class="button">
+														<button class="btn green order">Замовити<span></span></button>
+													</div>
+											</div>											
+
+											<div class="item" data-id="76050">		
+												<div class="img">
+													<img src="/img/13159_square.jpg" alt="Свинний окорок">
+													<div class="info">текст опис текст опис текст опис текст опис текст опис текст опис текст опис текст опис </div>
+												</div>
+												<div class="title">
+													<h3><span>Свинний окорок</span></h3>
+												</div>
+												<div class="price"> 190 <span class="rub">грн</span></div>
+													<div class="button">
+														<button class="btn green order">Замовити<span></span></button>
+													</div>
+											</div>
+
+											<div class="item" data-id="76050">		
+												<div class="img">
+													<img src="/img/17636_normal.jpg" alt="Ковбаса Бащинська">
+													<div class="info">текст опис текст опис текст опис текст опис текст опис текст опис текст опис текст опис </div>
+												</div>
+												<div class="title">
+													<h3><span>Ковбаса Бащинська</span></h3>
+												</div>
+												<div class="price"> 190 <span class="rub">грн</span></div>
+													<div class="button">
+														<button class="btn green order">Замовити<span></span></button>
+													</div>
+											</div>
+
+								</div>
+							</div>
+						</div>
+			</div>
+</section>
+		
+<footer>
+			<div class="inner">
+				<div class="copyright">
+					<div class="copy">
+						<p>© 2013-2014 Норма, Чернівці.</p>
+						<span class="reserved">Всі права захищено</span>
+					</div>
+					<!--noindex-->
+					<div class="social">
+						<a class="vk" rel="nofollow" href="#"></a>
+						<a class="fb" rel="nofollow" href="#"></a>
+						<a class="tw" rel="nofollow" href="#"></a>
+						<a class="ig" rel="nofollow" href="#"></a>
+					</div>
+					<!--/noindex-->
+				</div>
+				<div class="index-footer-nav">
+					<!--noindex-->
+					<div class="site-map">
+						<ul>
+							<li><a rel="nofollow" href="/about">Про нас</a></li>
+							<li><a rel="nofollow" href="/contacts">Контакти</a></li>
+							<li><a rel="nofollow" href="/partners">Інформація для партнерів</a></li>
+							<li><a rel="nofollow" href="/agreement">Правила користувача</a></li>
+						</ul>
+					</div>
+					<!--/noindex-->
+					<div class="dopinfo">
+						<ul>
+							<li><a href="#">Доставка піци</a></li>
+							<li><a href="#">Доставка суші</a></li>
+							<li><a href="#">Доставка їжі</a></li>
+							<li><a href="#">Доставка продуктів</a></li>
+							<li><a href="#">Рецепти</a></li>
+						</ul>
+					</div>
+					<div class="dop-link">
+						<div class="gifts">
+							<a rel="nofollow" href="#">
+								<i>Подарки <br> от Норма</i>
+							</a>
+						</div>
+						<div class="cookery">
+							<a rel="nofollow" href="#">
+								<i>Кулінарний <br> портал</i>
+							</a>
+						</div>
+					</div>
+
+					<div class="dopinfo">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5312.602511330349!2d25.93447644983627!3d48.25857684602397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47340f30e4347393%3A0x4901fc4591d3991c!2z0J3QvtGA0LzQsA!5e0!3m2!1sru!2sua!4v1419810208571" width="325" height="135" frameborder="0" style="border:0"></iframe>
+					</div>
+
+					<div class="feedback-link">
+						<a href="#mfeedback" class="modalLink"><b>Написати нам</b></a>
+					</div>
+				</div>
+			</div>
+</footer>
+
+	</div>
+
+	<div id="modal"></div>
+	<div class="overlay"></div>	
+
+</body>
+</html>

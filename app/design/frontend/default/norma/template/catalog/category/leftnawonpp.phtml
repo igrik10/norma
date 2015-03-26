@@ -1,0 +1,59 @@
+<?php
+
+   $rootCatId = Mage::app()->getStore()->getRootCategoryId();
+   $catlistHtml = getTreeCategories($rootCatId, false);
+
+	function getTreeCategories($parentId, $isChild){
+		$allCats = Mage::getModel('catalog/category')->getCollection()
+					->addAttributeToSelect('*')
+					->addAttributeToFilter('is_active','1')
+					->addAttributeToFilter('include_in_menu','1')
+					->addAttributeToFilter('parent_id',array('eq' => $parentId))
+					->addAttributeToSort('position', 'asc');
+		$html = '';	   
+		$class = ($isChild) ? "sub-cat-list" : "cat-list";
+		
+		
+		
+		foreach($allCats as $category)
+		{
+			$currentCar=Mage::registry('current_category');
+			$showLi = '';
+			$showUl = '';
+			if($currentCar)
+			{
+				$id = $currentCar->getId();
+				$showLi = ($id == $category->getId()) ? "class='selected'" : '';
+				$showUl = ($id == $category->getId()) ? "style='display: block;'" : '';
+			}
+			
+			
+			$html .= '<li '.$showLi.'><a href="#" class="icon"><span onclick=setLocation("'.Mage::getUrl($category->getUrlPath()).'")>'.$category->getName()."</span></a>";
+			$subcats = $category->getChildren();
+			
+			if($subcats != ''){
+				$html .= '<ul class="nav-sub-items" '.$showUl.'>';
+					$html .= getTreeCategories($category->getId(), true);
+				$html .= '</ul>';
+			}
+			$html .= '</li>';
+		}
+
+		return $html;
+	}
+
+?>	
+<nav class="nav-left">
+	<div class="title"><?php echo $this->__('Категорії товарів');?></div>
+	<ul class="nav-items cat">
+		<?php
+			echo $catlistHtml;
+		?>																																			
+	</ul>
+</nav>
+
+
+
+
+
+

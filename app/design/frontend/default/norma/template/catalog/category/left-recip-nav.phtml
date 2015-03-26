@@ -1,0 +1,44 @@
+<div class="search-box-lcol">
+<div class="form">
+		<div class="field">
+			<span class="label">Для пошуку рецепту виберіть категорію</span>
+			<select name="recipe" onchange="recipeForm(this);">
+				<?php
+				$cat = Mage::getModel('catalog/category')->load(10);
+				$subcats = $cat->getId().','.$cat->getChildren();				
+				$currentCar=Mage::registry('current_category');
+				foreach(explode(',',$subcats) as $subCatid):
+				  $_category = Mage::getModel('catalog/category')->load($subCatid);
+				  if($_category->getIsActive()):
+					
+					$selected = ($currentCar AND $currentCar->getId() == $_category->getId()) ? "selected='selected'" : '';
+					?><option <?php echo $selected?> value="<?php echo $_category->getUrl();?>"><?php echo $_category->getName();?></option><?
+				  endif;
+				endforeach;
+				?>
+			</select>
+		</div>
+</div>
+</div>
+<hr>
+<div class="preview-boxes">
+<span>Популярні рецепти з цієї тематики</span>
+	<a href="/recipe.html" class="preview-box">
+		<div class="preview-img">
+			<img src="/skin/frontend/default/norma/images/r206-465.jpg" alt="Індійка фарширована рисом">
+		</div>
+		<h4>Індійка фарширована рисом</h4>
+	</a>
+	<a href="/recipe.html" class="preview-box">
+		<div class="preview-img">
+			<img src="/skin/frontend/default/norma/images/r206-442.jpg" alt="Тельне з лососини">
+		</div>
+		<h4>Тельне з лососини</h4>
+	</a>
+	<a href="/recipe.html" class="preview-box">
+		<div class="preview-img">
+			<img src="/skin/frontend/default/norma/images/r206-193.jpg" alt="Полента з помідорами">
+		</div>
+		<h4>Полента з помідорами</h4>
+	</a>
+</div>
